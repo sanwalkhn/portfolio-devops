@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">DevOps Trio</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/projects" class="active">Projects</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Projects</h1>
+            <p class="subtitle">Selected work highlighting what we are learning and building together.</p>
+        </section>
+
+        <section class="cards-grid">
+            <article class="card">
+                <h3>DevOps Portfolio Website</h3>
+                <p class="role">Tech: Flask, Docker</p>
+                <p class="bio">
+                    A simple portfolio deployed in a Docker container, showcasing basic CI/CD ideas and containerization.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Secure Messaging Concept</h3>
+                <p class="role">Tech: Python, basic encryption</p>
+                <p class="bio">
+                    A small concept app exploring how encryption and authentication can be used to protect messages.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Monitoring &amp; Logs Demo</h3>
+                <p class="role">Tech: Scripts, logging</p>
+                <p class="bio">
+                    Experimenting with log collection and simple monitoring ideas to better understand system behaviour.
+                </p>
+            </article>
+        </section>
+
+        <div class="center mt-lg">
+            <a class="btn secondary" href="/">Back to Home</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; {{ 2025 }} DevOps Trio</p>
+    </footer>
+</body>
+</html>

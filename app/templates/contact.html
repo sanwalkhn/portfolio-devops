@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">DevOps Trio</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Contact Us</h1>
+            <p class="subtitle">Have a question or want to talk about DevOps, automation, or projects? Send us a message.</p>
+        </section>
+
+        <section class="contact-layout">
+            <form method="post" class="contact-form">
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="How can we help?"></textarea>
+                </div>
+                <button class="btn primary full-width" type="submit">Send Message</button>
+            </form>
+
+            <aside class="contact-info">
+                <h3>Team</h3>
+                <ul>
+                    <li>Sanwal Afraiz</li>
+                    <li>Muhammad Abdullah Khan</li>
+                    <li>Ahmad Ali</li>
+                </ul>
+                <p class="small">
+                    We are currently learning and building our portfolio. Feel free to share feedback or ideas for improvement.
+                </p>
+            </aside>
+        </section>
+
+        <div class="center mt-lg">
+            <a class="btn secondary" href="/">Back to Home</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; {{ 2025 }} DevOps Trio</p>
+    </footer>
+</body>
+</html>
