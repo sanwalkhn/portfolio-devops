@@ -80,6 +80,17 @@ pipeline {
                 }
             }
         }
+        
+        stage('Cleanup') {
+            steps {
+                echo 'Cleaning up old Docker images...'
+                script {
+                    sh '''
+                        docker image prune -f || true
+                    '''
+                }
+            }
+        }
     }
     
     post {
@@ -89,18 +100,6 @@ pipeline {
         }
         failure {
             echo 'Pipeline failed! Check logs for details.'
-        }
-        cleanup {
-            script {
-                try {
-                    echo 'Cleaning up old images...'
-                    sh '''
-                        docker image prune -f || true
-                    '''
-                } catch (Exception e) {
-                    echo "Cleanup skipped: ${e.getMessage()}"
-                }
-            }
         }
     }
 }
