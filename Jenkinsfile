@@ -90,11 +90,17 @@ pipeline {
         failure {
             echo 'Pipeline failed! Check logs for details.'
         }
-        always {
-            echo 'Cleaning up old images...'
-            sh '''
-                docker image prune -f || true
-            '''
+        cleanup {
+            script {
+                try {
+                    echo 'Cleaning up old images...'
+                    sh '''
+                        docker image prune -f || true
+                    '''
+                } catch (Exception e) {
+                    echo "Cleanup skipped: ${e.getMessage()}"
+                }
+            }
         }
     }
 }
