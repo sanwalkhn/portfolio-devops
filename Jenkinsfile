@@ -8,9 +8,10 @@ pipeline {
     }
     
     triggers {
-        // Poll GitHub every minute for changes
-        pollSCM('* * * * *')
-        // Or use GitHub webhook (configure in Jenkins job settings)
+        // Poll GitHub every 2 minutes for changes (as backup)
+        pollSCM('H/2 * * * *')
+        // GitHub webhook will trigger immediately on push
+        // Make sure to enable "GitHub hook trigger for GITScm polling" in job settings
     }
     
     stages {
