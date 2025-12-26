@@ -22,9 +22,9 @@ USER appuser
 # Expose port
 EXPOSE 5000
 
-# Health check (optional - can be removed if curl is not needed)
+# Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:5000/')" || exit 1
+    CMD python -c "import socket; s=socket.socket(); s.connect(('localhost', 5000)); s.close()" || exit 1
 
 # Run the application
 CMD ["python", "app.py"]
